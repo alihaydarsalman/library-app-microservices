@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface BookServiceFeignClient {
 
     @GetMapping("/isbn/{isbn}")
+    // TODO: @CircuitBreaker annotation
     ResponseEntity<BookIdDto> findByIsbn(@PathVariable String isbn);
 
+    // TODO: add fallbackMethod
     @GetMapping("/id/{id}")
     ResponseEntity<BookDto> findBookDetailsById(@PathVariable String id);
 }

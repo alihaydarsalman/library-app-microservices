@@ -53,10 +53,10 @@ public class LibraryServiceImpl implements LibraryService{
     @Override
     public void addBookToLibrary(AddBookRequest request){
 
-        String bookId = bookFeignClient.findByIsbn(request.getIsbn()).getBody().getId();
-
         Library library = this.repository.findById(request.getId())
                 .orElseThrow(() -> new LibraryNotFoundException("Library not found with id. ID: "+request.getId()));
+
+        String bookId = bookFeignClient.findByIsbn(request.getIsbn()).getBody().getId();
 
         library.getBookIds().add(bookId);
 

@@ -7,6 +7,5 @@ public interface LibraryService {
 
     LibraryDto getAllBooksInLibraryById(String id);
     LibraryDto createLibrary();
-
     void addBookToLibrary(AddBookRequest request);
 }

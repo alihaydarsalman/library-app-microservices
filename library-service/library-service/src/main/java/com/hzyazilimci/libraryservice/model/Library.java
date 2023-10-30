@@ -21,6 +21,7 @@ public class Library {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    @ElementCollection
+    @ElementCollection // primitive veya @Embeddable olarak isaretli tipler icin kullanilabilir. Ara tablo yaratir. @Entity ile isaretli tipler icin kullanilmaz!
+                       // ManyToMany bir tablo create eder.
     private List<String> bookIds;
 }

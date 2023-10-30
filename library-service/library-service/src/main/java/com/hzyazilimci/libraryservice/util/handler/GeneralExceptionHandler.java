@@ -1,5 +1,6 @@
 package com.hzyazilimci.libraryservice.util.handler;
 
+import com.hzyazilimci.libraryservice.client.ExceptionMessage;
 import com.hzyazilimci.libraryservice.util.exception.BookNotFoundException;
 import com.hzyazilimci.libraryservice.util.exception.LibraryNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -14,9 +15,9 @@ public class GeneralExceptionHandler {
     public ResponseEntity<?> handle(LibraryNotFoundException exception){
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
-
+    
     @ExceptionHandler(BookNotFoundException.class)
-    public ResponseEntity<?> handle(BookNotFoundException exception){
-        return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+    public ResponseEntity<ExceptionMessage> handle(BookNotFoundException exception){
+        return new ResponseEntity<>(exception.getExceptionMessage(), HttpStatus.resolve(exception.getExceptionMessage().getStatus()));
     }
 }

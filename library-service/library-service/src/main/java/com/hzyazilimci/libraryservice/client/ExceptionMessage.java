@@ -1,9 +1,18 @@
 package com.hzyazilimci.libraryservice.client;
 
-public record ExceptionMessage(
-        String timeStamp,
-        String error,
-        String message,
-        String path
-        ) {
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class ExceptionMessage{
+
+        private String timeStamp;
+        private String error;
+        private String message;
+        private String path;
+        private int status;
 }
