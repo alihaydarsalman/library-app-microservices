@@ -25,10 +25,10 @@ public class LibraryServiceImpl implements LibraryService{
     }
 
     @Override
-    public LibraryDto getAllBooksInLibraryById(String id) {
+    public LibraryDto getAllBooksInLibraryById(String libId) {
 
-        Library library = this.repository.findById(id)
-                .orElseThrow(() -> new LibraryNotFoundException("Library not found with id. ID: "+id));
+        Library library = this.repository.findById(libId)
+                .orElseThrow(() -> new LibraryNotFoundException("Library not found with id. ID: "+libId));
 
         return LibraryDto.builder()
                 .id(library.getId())

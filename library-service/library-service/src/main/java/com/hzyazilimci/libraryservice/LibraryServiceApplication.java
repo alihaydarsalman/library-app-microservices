@@ -16,7 +16,7 @@ public class LibraryServiceApplication {
 		SpringApplication.run(LibraryServiceApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public ErrorDecoder errorDecoder(){
 		return new RetrieveMessageErrorDecoder();
 	}
@@ -24,5 +24,5 @@ public class LibraryServiceApplication {
 	@Bean
 	public Logger.Level feignLoggerLevel(){
 		return Logger.Level.FULL;
-	}
+	}*/
 }

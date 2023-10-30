@@ -55,6 +55,11 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+		<!-- resilience4j kutuphanesi bookFeignClient' tan exception dondugu durumlarda process' e devam edebilmek amaciyla kullanilacak. -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-circuitbreaker-resilience4j</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

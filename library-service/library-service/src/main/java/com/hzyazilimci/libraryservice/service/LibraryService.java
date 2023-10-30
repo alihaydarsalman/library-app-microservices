@@ -5,7 +5,7 @@ import com.hzyazilimci.libraryservice.dto.LibraryDto;
 
 public interface LibraryService {
 
-    LibraryDto getAllBooksInLibraryById(String id);
+    LibraryDto getAllBooksInLibraryById(String libId);
     LibraryDto createLibrary();
     void addBookToLibrary(AddBookRequest request);
 }

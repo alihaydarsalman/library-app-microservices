@@ -18,9 +18,9 @@ public class LibraryController {
         this.service = service;
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<LibraryDto> getAllBooksInLibraryById(@PathVariable String id){
-        return ResponseEntity.ok(this.service.getAllBooksInLibraryById(id));
+    @GetMapping("{libId}")
+    public ResponseEntity<LibraryDto> getAllBooksInLibraryById(@PathVariable String libId){
+        return ResponseEntity.ok(this.service.getAllBooksInLibraryById(libId));
     }
 
     @PostMapping
