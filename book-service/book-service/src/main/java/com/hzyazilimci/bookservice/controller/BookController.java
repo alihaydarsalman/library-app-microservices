@@ -37,4 +37,9 @@ public class BookController {
     public ResponseEntity<GetBookDto> findBookDetailsById(@PathVariable @NotEmpty String id){
         return ResponseEntity.ok(this.service.findBookDetailsById(id));
     }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> findBookDetailsById(){
+        return ResponseEntity.ok("DENEME CALISIYOR.");
+    }
 }
