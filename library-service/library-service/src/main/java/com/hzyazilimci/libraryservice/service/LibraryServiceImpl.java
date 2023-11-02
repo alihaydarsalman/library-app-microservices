@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -61,5 +62,13 @@ public class LibraryServiceImpl implements LibraryService{
         library.getBookIds().add(bookId);
 
         this.repository.save(library);
+    }
+
+    @Override
+    public List<String> getAllLibraries() {
+        return this.repository.findAll()
+                .stream()
+                .map(Library::getId)
+                .collect(Collectors.toList());
     }
 }
